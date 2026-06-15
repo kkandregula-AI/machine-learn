@@ -1,0 +1,18 @@
+{
+  "short_name": "MLPlayground",
+  "name": "MLPlayground: Interactive ML/DL Explainer",
+  "description": "An interactive Progressive Web App that visualizes and explains key machine learning and deep learning concepts for students.",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "display": "standalone",
+  "orientation": "portrait-primary"
+}

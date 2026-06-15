@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="grad-pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+    <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e1e2f" />
+      <stop offset="100%" stop-color="#09090b" />
+    </radialGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark Background -->
+  <rect width="100%" height="100%" rx="112" fill="url(#bg-grad)" />
+
+  <!-- Connecting Lines -->
+  <g stroke-width="6" stroke-linecap="round" opacity="0.65" filter="url(#glow)">
+    <!-- Layer 1 to Layer 2 -->
+    <line x1="130" y1="180" x2="256" y2="120" stroke="url(#grad-blue)" />
+    <line x1="130" y1="180" x2="256" y2="256" stroke="url(#grad-blue)" />
+    
+    <line x1="130" y1="332" x2="256" y2="256" stroke="url(#grad-blue)" />
+    <line x1="130" y1="332" x2="256" y2="392" stroke="url(#grad-blue)" />
+    
+    <!-- Layer 2 to Layer 3 -->
+    <line x1="256" y1="120" x2="382" y2="180" stroke="url(#grad-pink)" />
+    <line x1="256" y1="256" x2="382" y2="180" stroke="url(#grad-pink)" />
+    <line x1="256" y1="256" x2="382" y2="332" stroke="url(#grad-pink)" />
+    <line x1="256" y1="392" x2="382" y2="332" stroke="url(#grad-pink)" />
+    
+    <!-- Shortcuts / ResNet links -->
+    <path d="M 130 180 Q 256 60 382 180" fill="none" stroke="url(#grad-cyan)" stroke-width="4" stroke-dasharray="8 6" />
+    <path d="M 130 332 Q 256 452 382 332" fill="none" stroke="url(#grad-cyan)" stroke-width="4" stroke-dasharray="8 6" />
+  </g>
+
+  <!-- Nodes -->
+  <g filter="url(#glow)">
+    <!-- Input Layer -->
+    <circle cx="130" cy="180" r="30" fill="url(#grad-cyan)" />
+    <circle cx="130" cy="332" r="30" fill="url(#grad-cyan)" />
+    
+    <!-- Hidden Layer -->
+    <circle cx="256" cy="120" r="34" fill="url(#grad-blue)" />
+    <circle cx="256" cy="256" r="34" fill="url(#grad-blue)" />
+    <circle cx="256" cy="392" r="34" fill="url(#grad-blue)" />
+    
+    <!-- Output Layer -->
+    <circle cx="382" cy="180" r="30" fill="url(#grad-pink)" />
+    <circle cx="382" cy="332" r="30" fill="url(#grad-pink)" />
+  </g>
+
+  <!-- Subtle Core Details (glowing centers) -->
+  <circle cx="256" cy="256" r="12" fill="#ffffff" opacity="0.9" filter="url(#glow)" />
+  <circle cx="256" cy="120" r="12" fill="#ffffff" opacity="0.9" filter="url(#glow)" />
+  <circle cx="256" cy="392" r="12" fill="#ffffff" opacity="0.9" filter="url(#glow)" />
+</svg>
